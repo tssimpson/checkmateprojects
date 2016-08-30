@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Less simple function</title>
+</head>
+
+<h1 align ="center">Check if number is odd or even below</h1><center>
+<h2 align ="center">Created by Tyler Simpson</h1><center>
+
+<form name = formtwo>
+<td align = "center"><BR><BR><BR>Enter a number:
+<input type=text id="enter" name=enterhere maxlength="10" value="" >
+<input type=button name = b3 value = "Determine if odd or even" onClick = compute()><br>
+<center>
+<BR><BR>
+<b>Number</b>
+<input type=text id="outnmb" name=inputnumber size="5" disabled value="0">
+<b>is<b>
+<input type=text id="outtxt" name=output size="5" value="" disabled > </center>
+<BR><BR><BR>
+
+</table>
+</form>
+</center>
+
+<script type='text/javascript'>
+
+
+// This begins the compute function.. I found out lowercase makes a big difference with functions in javascript today! Ugh
+function compute(){
+  var enter = document.getElementById("enter");
+  var outnmb = document.getElementById("outnmb");
+  var outtxt = document.getElementById("outtxt");
+
+  outtxt.value = "";
+
+  var mynmb = enter.value;
+  outnmb.value = mynmb; // give the outnmb element the mynmb value;
+
+  // The javascript below isNaN function "is Not a Number" checks if your input is NOT a valid number
+  // I didn't remember this by heart but this really pushed me to look further into it to complete this
+  // I'll admit this one took me a bit longer to do and I probably could've use a tad bit more simple code
+  // I like putting comments in my code ;)
+  if ( isNaN(+mynmb) ) {
+    outtxt.value = "error ...";
+    alert( 'please enter a valid number, EXAMPLE: \n\n-123, \n 123' );
+    return;
+  }
+
+  else {
+
+    if ( mynmb%2 == 0 ) { outtxt.value = "Even";
+   }
+    if ( Math.abs(mynmb%2) == 1 ) { outtxt.value = "Odd";
+  }
+}
+}
+
+</script>
+</body>
+</html>
