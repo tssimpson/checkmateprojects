@@ -4,7 +4,7 @@ const PORT = 8080;
 
 function theRequest(request, response)
 {
-   console.log(request);
+  //  console.log(request);
    response.end('You made a ' + request.method + ' request');
 }
 
